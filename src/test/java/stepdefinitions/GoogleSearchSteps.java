@@ -19,7 +19,7 @@ public class GoogleSearchSteps {
         // Zmaksymalizuj okno przeglądarki
         driver.manage().window().maximize();
         // Przejdź do Google
-        driver.get("http://www.google.com");
+        driver.get("https://www.google.com");
     }
     @When("a keyword (.*) is entered in input field")
     public void enterKeyword(String keyword) {
