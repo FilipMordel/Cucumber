@@ -29,6 +29,12 @@ public class LoginTest {
         loginPage.loginAs("michal.dobrzycki@coderslab.pl", "CodersLab");
         Assert.assertEquals("Automated Tester", loginPage.getLoggedUsername());
     }
+    @Test
+    public void testLoginWithWrongProperCredentials() {
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.loginAs("michal.dobrzycki@coderslab.pl", "123fdfs1");
+        Assert.assertEquals("Authentication failed.", loginPage.getErrorMessages());
+    }
 
     @After
     public void tearDown() {
